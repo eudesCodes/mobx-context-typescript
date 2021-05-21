@@ -27,7 +27,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eslint": "eslint --fix .",
-        "format": "prettier --write \"*.{css,js,json,md,ts,tsx}\" \"./**/*.{css,js,json,md,ts,tsx}\"",
+        "format": "prettier --write \"*.{css,js,json,md,ts,tsx,d.ts}\" \"./**/*.{css,js,json,md,ts,tsx,d.ts}\"",
         "lint": "yarn format && yarn eslint",
         "transpile": "yarn clean && tsc ts/*/* --outDir js",
         "header:comment": "node js/*/header_comments.js && yarn lint",
@@ -54,6 +54,7 @@
     },
     "files": [
         "src/index.tsx",
-        "ACKNOWLEDGMENTS.md"
+        "ACKNOWLEDGMENTS.md",
+        "mobx/models/index.ts"
     ]
 }
