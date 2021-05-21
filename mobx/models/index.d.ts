@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { GiiherStore } from 'mobx/store';
 
 // Type Store
 
 type TStore = {
-    store: 'store goes here';
+    giiher: GiiherStore;
 };
 
 // Provider store type
