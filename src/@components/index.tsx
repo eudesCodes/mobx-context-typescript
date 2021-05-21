@@ -10,9 +10,9 @@ export default observer((): JSX.Element => {
         giiher: { state, GPromise },
     } = useStore();
 
+    // useEffect Hook
     React.useEffect(() => {
         GPromise();
-        // return clearTimeout(timer);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return <>{state}</>;

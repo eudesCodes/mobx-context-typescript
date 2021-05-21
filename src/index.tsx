@@ -16,11 +16,11 @@
 
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-
 import { Store } from 'src/@mobx';
 import { StoreProvider } from 'src/@mobx/context';
 import Component from 'src/@components';
 
+/**  */
 ReactDOM.render(
     <StoreProvider store={Store}>
         <React.StrictMode>
