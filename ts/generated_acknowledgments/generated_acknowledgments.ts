@@ -23,6 +23,7 @@ const createdACKNOWLEDGMENTS = async (dependencie: string): Promise<string> => {
      * @description : the body of ACKNOWLEDGMENTS.md file
      */
     let licenseContent: string = '';
+
     const DEPENDENCIE_PATH: string = join(NODE_MODULE_DIREDCTORY, dependencie);
     // @constant
     const findLicenseFile = (await fs.promises.readdir(DEPENDENCIE_PATH)).find(
@@ -53,11 +54,11 @@ const createdACKNOWLEDGMENTS = async (dependencie: string): Promise<string> => {
 
     const { dependencies = {} } = require(ROOT_PACKAGE_JSON_PATH);
 
-    const MAP_CONTENT = (await pMAp([...Object.keys(dependencies)], createdACKNOWLEDGMENTS)).join(
-        '\n',
-    );
+    const MAP_CONTENT: string = (
+        await pMAp([...Object.keys(dependencies)], createdACKNOWLEDGMENTS)
+    ).join('\n');
 
-    const OUT_PUT_CONTENT = [``, MAP_CONTENT].join('\n');
+    const OUT_PUT_CONTENT: string = [``, MAP_CONTENT].join('\n');
 
     await fs.promises.writeFile(ACKNOWLEDGMENTS_PATH, OUT_PUT_CONTENT, { encoding: 'utf-8' });
 })();

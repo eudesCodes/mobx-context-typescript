@@ -48,8 +48,7 @@ const headerComments = (Path: string): any => {
  * @param { string } file
  */
 const headerCommentInFile = (file: string) => {
-    // eslint-disable-next-line no-undef
-    fs.readFile(file, { encoding: 'utf-8' }, async (err: NodeJS.ErrnoException, data: string) => {
+    fs.readFile(file, { encoding: 'utf-8' }, async (_err: any, data: string) => {
         if (data) {
             await fs.promises.writeFile(
                 file,
@@ -63,8 +62,10 @@ const headerCommentInFile = (file: string) => {
 // eslint-disable-next-line no-undef
 const { files = [] } = require(join(process.cwd(), 'package.json'));
 
+// Add Header comment
 (async () => {
     await pMAp(files, headerCommentInFile);
 })();
 
+//
 export { headerComments };

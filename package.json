@@ -53,11 +53,14 @@
         ]
     },
     "files": [
-        "src/index.tsx",
         "ACKNOWLEDGMENTS.md",
-        "src/@mobx/models/index.ts",
+        "src/index.tsx",
+        "src/@mobx/models/index.d.ts",
         "src/@mobx/store/index.ts",
+        "src/@mobx/context/index.ts",
         "src/@mobx/index.ts",
-        "src/@components/index.tsx"
+        "src/@components/index.tsx",
+        "ts/header_comments/header_comments.ts",
+        "ts/generated_acknowledgments/generated_acknowledgments.ts"
     ]
 }
