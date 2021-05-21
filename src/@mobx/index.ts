@@ -14,18 +14,13 @@
  SOFTWARE.
 */
 
-import * as React from 'react';
-import ReactDOM from 'react-dom';
+import { GiiherStore } from 'src/@mobx/store';
+import { TStore } from 'src/@mobx/models';
 
-import { Store } from 'src/@mobx';
-import { StoreProvider } from 'src/@mobx/context';
-import Component from 'src/@components';
+// Store initialization
+const Store: TStore = {
+    giiher: new GiiherStore(),
+};
 
-ReactDOM.render(
-    <StoreProvider store={Store}>
-        <React.StrictMode>
-            <Component />
-        </React.StrictMode>
-    </StoreProvider>,
-    document.getElementById('root'),
-);
+// Export
+export { Store }; // export Store

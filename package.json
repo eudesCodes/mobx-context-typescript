@@ -55,6 +55,9 @@
     "files": [
         "src/index.tsx",
         "ACKNOWLEDGMENTS.md",
-        "mobx/models/index.ts"
+        "src/@mobx/models/index.ts",
+        "src/@mobx/store/index.ts",
+        "src/@mobx/index.ts",
+        "src/@components/index.tsx"
     ]
 }

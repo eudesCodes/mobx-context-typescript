@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { GiiherStore } from 'mobx/store';
+import { GiiherStore } from 'src/@mobx/store';
 
 // Type Store
 

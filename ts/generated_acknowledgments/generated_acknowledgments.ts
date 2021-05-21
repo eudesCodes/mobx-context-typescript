@@ -25,7 +25,7 @@ const createdACKNOWLEDGMENTS = async (dependencie: string): Promise<string> => {
     let licenseContent: string = '';
     const DEPENDENCIE_PATH: string = join(NODE_MODULE_DIREDCTORY, dependencie);
     // @constant
-    const findLicenseFile: string = (await fs.promises.readdir(DEPENDENCIE_PATH)).find(
+    const findLicenseFile = (await fs.promises.readdir(DEPENDENCIE_PATH)).find(
         verifIfLicenseFileExist,
     );
 

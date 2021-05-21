@@ -14,18 +14,28 @@
  SOFTWARE.
 */
 
-import * as React from 'react';
-import ReactDOM from 'react-dom';
+import { makeAutoObservable, runInAction } from 'mobx';
 
-import { Store } from 'src/@mobx';
-import { StoreProvider } from 'src/@mobx/context';
-import Component from 'src/@components';
+class GiiherStore {
+    constructor() {
+        makeAutoObservable(this);
+    }
+    /**
+     * @constant
+     */
+    state: string = 'pending'; // "pending", "done"
 
-ReactDOM.render(
-    <StoreProvider store={Store}>
-        <React.StrictMode>
-            <Component />
-        </React.StrictMode>
-    </StoreProvider>,
-    document.getElementById('root'),
-);
+    /**
+     * @method GPromise
+     */
+    GPromise = async () => {
+        this.state = 'pending';
+        await new Promise((resolve) => setTimeout(resolve, 4000));
+        runInAction(() => {
+            this.state = 'done';
+        });
+    };
+}
+
+// export stores
+export { GiiherStore };
