@@ -8,8 +8,6 @@ type TStore = {
 };
 
 // Provider store type
-
-// Provider store type
 type TSoreProvider = React.PropsWithChildren<{
     store: TStore;
 }>;
